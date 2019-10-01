@@ -1,0 +1,68 @@
+<h2>Expressions</h2>
+<h4>See expression-examples.html for comments</h4>
+<div class="section">
+	<!-- Using Angular Pipes is valid -->
+	<div>
+		{{codeblock1}}:
+		<span style="font-weight: 600">{{pageTitle | uppercase}}</span>
+  </div>
+	<!-- Basic Interpolation -->
+	<div>
+    {{codeblock2}}: 
+    <span style="font-weight: 600">{{pageSubtitle}}</span>
+  </div>
+</div>
+
+<!-- Accessing properties and string concatenation are both valid -->
+<div>
+	{{codeblock3}}:
+	<span style="font-weight: 600">
+    {{customer.firstName + ' ' + customer.lastName}}
+  </span>
+</div>
+
+<!-- Interpolation and Data Binding Syntax produce same result -->
+{{codeblock4}}: <div style="font-weight: 600" [textContent]="customer.firstName + ' ' + customer.lastName">
+
+</div>
+
+<!-- Methods that simply return a value are okay -->
+<div>
+	{{codeblock5}}: 
+  <input style="font-weight: 600" type="number" [value]="getCustomerAge()">
+</div>
+
+
+
+
+<div class="section">
+  <!-- Avoid Methods with Side Effects -->
+  {{updateCustomer()}}
+
+  <!-- Avoid Complex Expressions, write logic in typescript -->
+  Complex Intepolation: 
+  <span style="font-weight: 600">
+    {{customer.age >= 15 ? pageTitle : pageSubtitle | uppercase | lowercase | json }}
+  </span>
+</div>
+
+
+
+<!-- One Way Property Binding | Without One Way Event Binding -->
+<div class="section"> 
+  One-Way Property Binding (Source-To-View):
+  <div>
+    <input [value]="customer.firstName"/>
+    <br>
+    <input [value]="customer.lastName"/>
+  </div>
+  
+  
+   
+  <span style="font-weight: 600">
+    {{customer.firstName + ' ' + customer.lastName}}
+  </span>
+</div>
+<br>
+
+<hr>

@@ -1,0 +1,21 @@
+<h2>Statements</h2>
+<h4>See statement-examples.html</h4>
+Event-Binding Example (View-To-Source)
+<div style="margin-top=10px">
+  Hint: See console for output
+</div>
+<p>
+  {{codeblock1}}
+  <input (change)="updateName($event.target.value)">
+</p>
+
+<p>
+  {{codeblock2}}
+  <input (change)="updateLastName($event.target.value); validate()">
+</p>
+
+{{codeblock3}}
+<button type="button" (click)="updateCustomerAge()">
+  Increment Age
+</button>
+<hr>

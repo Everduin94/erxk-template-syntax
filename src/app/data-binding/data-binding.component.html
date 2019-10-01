@@ -1,0 +1,33 @@
+<h2>Data Binding</h2>
+
+<div [ngStyle]="styleObject">
+  {{textContent}}
+</div>
+
+<div>
+ <strong>Internal Component Elements effecting itself</strong>
+</div>
+<div [textContent]="styleObject['height.px']"></div>
+<div>{{styleObject['height.px']}}</div>
+
+<input #heightInput type="number" 
+[value]="styleObject['height.px']" 
+(change)="updateStyle('height.px', heightInput.value)">
+
+
+<!-- Write your own inputs here to bind styleObject properties -->
+
+<!-- font-size: string | update on keyup -->
+
+<!-- visible: boolean | use a check-box -->
+
+<!-- color: string | use a color-picker -->
+
+<!-- background: string | use a color-picker -->
+
+<!-- text-align: string | use a select -->
+
+<!-- padding.px: string -->
+
+<hr>
+

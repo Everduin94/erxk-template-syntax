@@ -1,0 +1,13 @@
+<h2>Examples, Comments, Practice Problems</h2>
+<hr>
+<app-expression-examples></app-expression-examples>
+<app-statement-examples></app-statement-examples>
+<app-data-binding [(textContent)]="externalTextContent"></app-data-binding>
+
+<div>
+  <strong>External Elements effecting our Component</strong>
+</div>
+<div>
+  {{externalTextContent}}
+</div>
+<input #textContentInput type="text" [value]="externalTextContent" (keyup)="externalTextContent = textContentInput.value">
